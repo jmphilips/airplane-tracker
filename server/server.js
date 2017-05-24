@@ -25,7 +25,7 @@ require('babel/register')({
 passport.use(new Strategy({
     clientID: process.env.FB_CLIENT_ID,
     clientSecret: process.env.FB_CLIENT_SECRET,
-    callbackURL: 'http://localhost:3000/login/facebook/return'
+    callbackURL: '/login/facebook/return'
   },
   (accessToken, refreshToken, profile, cb) => {
     User.findOne({ fbID: profile.id }, (err, user) => {
